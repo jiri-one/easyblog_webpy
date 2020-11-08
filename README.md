@@ -1,0 +1,1 @@
+This code is realy old, I wrote it around year 2009. It is code of my blog in WebPy (webpy.org). Now I am not using this code for my blog, but i let it run on site http://old.jiri.one and it is still working great :). 
