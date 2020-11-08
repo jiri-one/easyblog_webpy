@@ -1,0 +1,32 @@
+$def with (form_hledej, seznam_zapisku, typ, ziskej_kategorie, ziskej_datum, stranky, cislo_strany, fraze)
+
+<p><b>Výsledky vyhledávání:</b></p>
+<div>
+$ stare_datum = ""
+$if typ == 1:
+    $for zapisek in seznam_zapisku:
+        $ datum = ziskej_datum(zapisek.zadano_kdy[0:10])
+        $if datum == stare_datum:
+            </br>
+        $else:
+            <div class="datum">$datum</div>
+            $code:
+                stare_datum = datum
+        <div class="titulek"><a href="/$zapisek.url">$zapisek.nadpis</a></div>
+        <div class="meta">$:markdown(ziskej_kategorie(zapisek))</div>
+        <div class="obsah">$:markdown(zapisek.obsah)</div>
+        <div class="feedback" align="right"> 
+        Počet komentářů: $zapisek.pocet_komentaru
+        </div> 
+        <div class="postend">&#8226; &#8226; &#8226;</div>
+$else:
+    Nic nebylo nalezeno.
+</div>
+
+<p>Strany:<br/>
+$for stranka in range(1,stranky+1):
+    $if stranka == int(cislo_strany):
+        <a href="?vyhledavani=$fraze&strana=$stranka">[_]</a>
+    $else:
+        <a href="?vyhledavani=$fraze&strana=$stranka">[$stranka]</a>
+</p>

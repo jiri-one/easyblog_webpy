@@ -1,0 +1,86 @@
+$def with (page)
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Jiřího blog</title>
+	<meta name="title" content="Jiřího blog" />
+	<meta name="keywords" content="linux, linuxgames.cz, hry, filmy, blog, o všem, archlinux" />
+	<meta name="description" content="Jiřího blog o všem možném, o linuxu, o hrách ... prostě o všem" />
+	<link rel="stylesheet" href="/sablony/styl.css" type="text/css" media="screen, projection" />
+	<link rel="icon" href="/sablony/favicon.png" type="image/png" />
+
+<!--	<script type="text/javascript" src="/sablony/kultura/jquery-1.4.2.min.js" ></script>
+	<link rel="stylesheet" href="/sablony/kultura/mwEmbed-player-static.css"></link> 
+	<script type="text/javascript" src="/sablony/kultura/mwEmbed-player-static.js" ></script>
+-->
+
+	<link href="/sablony/video-js/video-js.css" rel="stylesheet">
+	<script src="/sablony/video-js/video.js"></script>
+	<script>
+		videojs.options.flash.swf = "/sablony/video-js/video-js.swf"
+	</script>
+
+</head>
+
+<body>
+
+
+<div id="wrapper">
+
+	<div id="header">
+		<div id="nazev">·:[ <a href="/">Jiřího blog</a> ]:·</div>
+		<div id="banner"></div>
+	</div><!-- #header-->
+
+<div class="sidebar" id="sideLeft">			
+<div id="about"><img src="/sablony/klerik.jpg" title="Jiří" alt="Avatar"/></div>
+<p>
+<b>O autorovi:</b><br/>
+<a href="/o-mne">O mně</a>
+</p>
+<p>
+<b>Kategorie:</b><br/>
+$ seznam_kategorii = get_seznam_kategorii()
+$for kategorie in seznam_kategorii:
+   <a href="/kategorie/$kategorie.url_kategorie">$kategorie.kategorie</a>
+</p>
+<b>Vyhledávání:</b><br/>
+<div id="formular_hledani"><form method="post" action="/hledej">
+<input type="text" id="vyhledavani" name="vyhledavani" size="15"/><br/>
+<button id="Vyhledat" name="Vyhledat">Vyhledat</button>
+</form></div>
+<p>
+<b>Zajímavé odkazy:</b><br/>
+<a href="https://archlinux.org/" target="_new">ArchLinux.org</a>
+<a href="https://phoronix.org/" target="_new">phoronix.org</a>
+<a href="http://LinuxGames.cz" target="_new">LinuxGames.cz</a>
+<a href="https://vpsfree.cz" target="_new">VPSfree.cz</a>
+</p>
+<p>
+<b>Ostatní:</b><br/>
+<a href="/admin">Administrace</a>
+</p>
+</div><!-- .sidebar#sideLeft -->
+
+			
+		
+
+
+	<div id="middle">
+	
+			$:page
+
+	</div><!-- #middle-->
+
+
+</div><!-- #wrapper -->
+
+	<div id="footer">
+	    Jiří 2007 - 2018
+	</div><!-- #footer -->
+
+</body>
+</html>

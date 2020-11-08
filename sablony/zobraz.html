@@ -1,0 +1,49 @@
+$def with (zapisek, seznam_komentaru, form_komentar, ziskej_datum, ziskej_kategorie)
+
+<script type="text/javascript" src="/sablony/javascript/util-functions.js"></script>
+<script type="text/javascript" src="/sablony/javascript/clear-default-text.js"></script> 
+
+<h1>$zapisek.nadpis</h1>
+<div class="meta">$:markdown(ziskej_kategorie(zapisek)[0:-14]), $ziskej_datum(zapisek.zadano_kdy[0:10]), 
+$zapisek.zadano_kdy[11:-3]
+</div></div>
+$:markdown(zapisek.obsah)
+<div class="postend">&#8226; &#8226; &#8226;</div>
+<div id="komentare"><h1>Komentáře:</h1></div>
+
+$if zapisek.pocet_komentaru == 0:
+    Zatím nebyly přidány žádné komentáře.<br/><br/>
+$else:
+    $for komentar in seznam_komentaru:
+        $ datum = ziskej_datum(komentar.zadano_kdy[0:10])
+        <div id="nadpis_commentu">
+        <b>$komentar.nadpis</b><br/>
+        Komentář od <b>$komentar.nick</b> — $datum @ $komentar.zadano_kdy[11:-3]
+        </div>
+        $komentar.obsah <br/><br/>
+
+<h1>Nový komentář:</h1>
+
+<div id="komentare_obsah">
+<form action="" method="post">
+<div class="konecobtekani">
+<label>Nadpis</label>
+$:form_komentar.nadpis_komentare.render()</div>
+
+<div class="konecobtekani">
+<label>Nick</label>
+$:form_komentar.nick.render()</div>
+
+<div class="konecobtekani">
+<label>Antispam</label>
+$:form_komentar.antispam.render()</div>
+
+<div class="konecobtekani">
+<label>Obsah</label>
+$:form_komentar.obsah.render()</div>
+
+<div class="konecobtekani">
+$:form_komentar.Odeslat.render()</div>
+</form>
+</div>
+<br/>

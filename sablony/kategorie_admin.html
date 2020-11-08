@@ -1,0 +1,21 @@
+$def with (form_kategorie)
+
+<h1>Administrace komentářů</h1>
+
+<b><a href="/admin">[Zpět na administraci zápisků]</a> <a href="/admin/komentare">[Prepnout na administraci komentaru]</a></b><br/><br/>
+
+<form action="" method="post">
+<p><b>Kategorie:</b>
+<table border=1>
+  <tr>
+      <th>Číslo:</th>
+      <th>Kategorie:</th>
+      <th>URL kategorie:</th>
+      <th>Popis:</th>
+
+  </tr>
+$for input in form_kategorie:
+    $:markdown(input)
+</table>
+</form>
+

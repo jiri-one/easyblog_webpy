@@ -1,0 +1,22 @@
+$def with (seznam_komentaru, ZISKEJ_URL, stranky, cislo_strany)
+
+
+<h1>Administrace komentářů</h1>
+
+<b><a href="/admin">[Zpět na administraci zápisků]</a> <a href="/admin/kategorie">[Prepnout na administraci kategorii]</a><br/></b>
+
+<h2>Seznam komentářů:</h2>
+
+$for komentar in seznam_komentaru:
+    $ url = ZISKEJ_URL(komentar.cislo_zapisku)
+    <b>$komentar.cislo - $komentar.nadpis</b> <i>$komentar.zadano_kdy</i>, patri k zapisku <b><a href="/$url">$url</a></b><br/>
+    $komentar.obsah <br/><a href="/admin/komentare/smaz/$komentar.cislo">[smazat komentar]</a> <a href="/admin/komentare/edituj/$komentar.cislo">[editovat komentar]</a><br/><br/>
+
+
+<p>Strany:<br/>
+$for stranka in range(1,stranky+1):
+    $if stranka == int(cislo_strany):
+        <a href="?strana=$stranka">[_]</a>
+    $else:
+        <a href="?strana=$stranka">[$stranka]</a>
+</p>

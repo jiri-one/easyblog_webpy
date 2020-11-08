@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body { padding: 0px; background-color: #FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+a {
+	color: blue;
+	outline: none;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+p {
+	margin: 0 0 18px
+}
+img {
+	border: none;
+}
+input {
+	vertical-align: middle;
+}
+#wrapper {
+	width: 100%;
+	min-width: 1000px;
+}
+
+
+/* Hlavička
+-----------------------------------------------------------------------------*/
+#header {
+	height: 100px;
+	background: #3c67be;
+}
+
+#nazev { float: left; clear:both; font-size: 40px; margin: 0px; padding: 0px; font-weight: bold; letter-spacing: 1px; color: #FFFFFF; position: relative; top: 25px; left: 20px;}
+#nazev a:link, #nazev a:visited { color: #000000; text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-variant: small-caps; }
+
+#banner { float: right;position: relative; top: 20px; right: 20px;}
+
+/* Obsahová část
+-----------------------------------------------------------------------------*/
+#middle { margin-left: 230px; padding: 20px; border-left: 1px dashed #3c67be; }
+
+
+
+#hledani {
+	position: absolute;
+	top: 35px;
+	right: 0px;
+
+}
+
+.datum { font-size: 14px; font-weight: bold; border: 1px dashed #3c67be; margin: 0px 0px 20px 0px; padding: 3px; background-color: #c5d7fb; color: #000000; }
+
+.titulek { font-size: 12px; font-weight: bold; border-bottom: 1px dashed #3c67be; margin: 0px 0px 5px 0px; padding: 0px 0px 2px 0px; }
+.titulek a:link, #titulek a:visited { color: #000000; text-decoration: none; }
+.titulek a:hover { color: #3c67be; }
+
+.meta { font-size: 10px; color: #000000; margin-bottom: 15px; }
+.meta a:link, .meta a:visited { color: #3c67be; }
+.meta a:hover { color: #3c67be; }
+
+.postend { margin: 5px 0px 30px 0px; padding: 0px; text-align: center; color: #c5d7fb; font-size: 18px; line-height: 0px; }
+
+a:link, a:visited { color: #000000; }
+a:hover { color: #3c67be; }
+
+/* Levý sloupec
+-----------------------------------------------------------------------------*/
+#sideLeft { float: left; width: 210px; padding: 20px 10px 20px 10px; }
+
+#sideLeft a:link, #sideLeft a:visited { display: block; padding: 2px 0px 2px 10px; margin: 0px; background-color: #c5d7fb; color: #000000; border-bottom: 1px dashed #3c67be; text-decoration: none; }
+#sideLeft a:hover { background-color: #3c67be; color: #FFFFFF; }
+
+#about { text-align: center; margin: 0px 0px 20px 0px; padding: 0px; }
+
+#formular_hledani { text-align: center; margin: 0px 0px 20px 0px; padding: 5px; background-color: #c5d7fb; border-bottom: 1px dashed #3c67be; text-decoration: none;}
+#vyhledavani{border: 1px solid black;}
+
+/* Patička
+-----------------------------------------------------------------------------*/
+#footer { clear: both; background-color: #3c67be; border-top: 1px dashed #3c67be; padding: 5px; font-size: 10px; text-align: center; }
+
+
+/* Komentáře
+-----------------------------------------------------------------------------*/
+
+div#komentare_obsah form {font-size: 15px; border-top: 2px solid #CCC; border-bottom: 3px solid #FFF;}
+div#komentare_obsah div.konecobtekani {border-top: 1px solid #FFF; padding: 10px 0px; vertical-align: top;}
+div#komentare_obsah form label {width: 90px; float: left; font-size: .75em;}
+div#komentare_obsah button {float: left; float: left; position: relative; left: 90px;}
+#komentare {border-bottom: 2px solid #CCC;}
+#nadpis_commentu {background-color: #E4E4E4;}
